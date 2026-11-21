@@ -24,7 +24,13 @@ jobs:
           git clone --depth 1 --branch main \
             https://github.com/fmhy/edit.git/ \
             "$RUNNER_TEMP/site"
-   
+      
+      - name: make sfw
+        run: |
+          cd /site/edit/docs/.vitepress/
+          sed -i -e 's/FMHY_NSFW_BUILD/off' shared.ts
+          cat -n '5p' shared.ts
+
       - name: set up pnpm
         uses: pnpm/action-setup@v4
         with:
