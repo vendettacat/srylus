@@ -28,8 +28,8 @@ jobs:
       - name: make sfw
         run: |
           cd "$RUNNER_TEMP/site/docs/.vitepress"
-          sed -i -e 's/FMHY_NSFW_BUILD/off/' shared.ts
-          cat -n '85p' shared.ts
+          sed -i 's/FMHY_BUILD_NSFW/off/' shared.ts
+          cat shared.ts
 
       - name: set up pnpm
         uses: pnpm/action-setup@v4
