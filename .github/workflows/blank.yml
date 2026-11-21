@@ -27,7 +27,7 @@ jobs:
       
       - name: make sfw
         run: |
-          cd /site/edit/docs/.vitepress/
+          cd $RUNNER_TEMP/site/edit/docs/.vitepress/
           sed -i -e 's/FMHY_NSFW_BUILD/off' shared.ts
           cat -n '5p' shared.ts
 
